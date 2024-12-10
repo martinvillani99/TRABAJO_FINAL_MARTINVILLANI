@@ -1,0 +1,40 @@
+<!-- juego_list.html -->
+{% extends 'app_juegos/base.html' %}
+
+{% block title %}Listado de Juegos{% endblock %}
+
+{% block content %}
+<h1>Listado de Juegos</h1>
+<ul>
+    {% for juego in juegos %}
+        <article>
+            <a href="{% url 'app_juegos:update_juegos' id=juego.id %}">ACTUALIZAR</a>
+            <a href="{% url 'app_juegos:delete_juegos' id=juego.id%}">ELIMINAR</a>    
+        
+        <li>
+            <h2>{{ juego.nombre }}</h2>
+            <p>Precio: {{ juego.precio }} USD</p>
+            <p>Descripción: {{ juego.descripcion }}</p>
+            <p>Categoría: {{ juego.categoria.nombre }}</p>
+            <p>Stock: {{ juego.stock }}</p>
+
+            <!-- Formulario para añadir comentarios -->
+            <form method="post" action="{% url 'app_juegos:add_comment' juego.id %}">
+                {% csrf_token %}
+                <label for="comentario">Deja tu comentario:</label>
+                <textarea id="comentario" name="comentario" rows="2" cols="40"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <!-- Mostrar comentarios -->
+            <h3>Comentarios:</h3>
+            <ul>
+                {% for comentario in juego.comentarios.all %}
+                    <li>{{ comentario.texto }} - <em>{{ comentario.creado_por }}</em></li>
+                </article>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

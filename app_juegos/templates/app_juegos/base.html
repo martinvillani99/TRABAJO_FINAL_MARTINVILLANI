@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tienda de Juegos de Mesa{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Tienda de Juegos de Mesa</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'app_juegos:buscar_juego' %}">Buscar Juego</a></li>
+                <li><a href="{% url 'app_juegos:crear_categoria' %}">Crear Categoría</a></li>
+                <li><a href="{% url 'app_juegos:crear_cliente' %}">Crear Cliente</a></li>
+                <li><a href="{% url 'app_juegos:crear_juego' %}">Crear Juego</a></li>
+                <li><a href="{% url 'app_juegos:crear_pedido' %}">Crear Pedido</a></li>
+                <li><a href="{% url 'app_juegos:listar_juegos' %}">Listar Juegos</a></li>
+                <li><a href="{% url 'app_juegos:lista_categorias' %}">Listar Categorías</a></li>
+                <li><a href="{% url 'app_juegos:lista_pedidos' %}">Listar Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

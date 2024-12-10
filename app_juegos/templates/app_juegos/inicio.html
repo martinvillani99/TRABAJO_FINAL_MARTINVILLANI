@@ -1,0 +1,19 @@
+
+{% extends 'app_juegos/base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h1>Bienvenido a la Tienda de Juegos de Mesa</h1>
+<p>Elige una de las opciones en el menú para comenzar.</p>
+<ul>
+    <li><a href="{% url 'app_juegos:buscar_juego' %}">Buscar Juego</a></li>
+    <li><a href="{% url 'app_juegos:crear_categoria' %}">Crear Categoría</a></li>
+    <li><a href="{% url 'app_juegos:crear_cliente' %}">Crear Cliente</a></li>
+    <li><a href="{% url 'app_juegos:crear_juego' %}">Crear Juego</a></li>
+    <li><a href="{% url 'app_juegos:crear_pedido' %}">Crear Pedido</a></li>
+    <li><a href="{% url 'app_juegos:listar_juegos' %}">Listar Juegos</a></li>
+    <li><a href="{% url 'app_juegos:lista_categorias' %}">Listar Categorías</a></li>
+    <li><a href="{% url 'app_juegos:lista_pedidos' %}">Listar Pedidos</a></li>
+</ul>
+{% endblock %}

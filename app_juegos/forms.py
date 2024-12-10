@@ -1,5 +1,5 @@
 from django import forms
-from .models import Categoria, Juego, Cliente, Pedido
+from .models import Categoria, Comentario, Juego, Cliente, Pedido
 
 
 
@@ -24,4 +24,10 @@ class ClienteForm(forms.ModelForm):
 class PedidoForm(forms.ModelForm):
     class Meta:
         model = Pedido
-        fields = ['cliente', 'juego', 'cantidad']
+        fields = ['cliente', 'juego', 'cantidad', 'direccion']
+
+class ComentarioForm(forms.ModelForm):
+    class Meta:
+        model = Comentario
+        fields = ['texto']
+

@@ -1,0 +1,12 @@
+{% extends 'app_juegos/base.html' %}
+
+{% block title %}Lista de Categorías{% endblock %}
+
+{% block content %}
+<h1>Lista de Categorías</h1>
+<ul>
+    {% for categoria in categorias %}
+        <li>{{ categoria.nombre }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

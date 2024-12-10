@@ -1,0 +1,12 @@
+{% extends 'app_juegos/base.html' %}
+
+{% block title %}Lista de Pedidos{% endblock %}
+
+{% block content %}
+<h1>Lista de Pedidos</h1>
+<ul>
+    {% for pedido in pedidos %}
+        <li>{{ pedido.cliente }} - {{ pedido.juego.nombre }} - {{ pedido.cantidad }} - {{ pedido.direccion }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
