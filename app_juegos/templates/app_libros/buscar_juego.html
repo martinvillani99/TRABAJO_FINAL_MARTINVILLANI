@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Buscar Juego{% endblock %}
+
+{% block content %}
+<h1>Buscar Juego</h1>
+<form method="get">
+    {% csrf_token %}
+    <div>
+        <label for="nombre">Nombre del Juego:</label>
+        <input type="text" id="nombre" name="nombre">
+    </div>
+    <button type="submit">Buscar</button>
+</form>
+
+{% if juegos %}
+    <h2>Resultados de la Búsqueda:</h2>
+    <ul>
+    {% for juego in juegos %}
+        <li>{{ juego.nombre }} - {{ juego.precio }} USD</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron juegos que coincidan con la búsqueda.</p>
+{% endif %}
+{% endblock %}

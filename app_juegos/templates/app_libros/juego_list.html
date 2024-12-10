@@ -1,0 +1,14 @@
+{% extends 'app_juegos/base.html' %}
+
+{% block title %}Listado de Juegos{% endblock %}
+
+{% block content %}
+<h1>Listado de Juegos</h1>
+<ul>
+    {% for juego in juegos %}
+        <li>{{ juego.nombre }} - {{ juego.precio }} USD</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+

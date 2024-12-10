@@ -1,0 +1,14 @@
+{% extends 'app_juegos/base.html' %}
+
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <p>¿Desea eliminar realmente el elemento?</p>
+    {{juego}}
+    <input type="submit" value="Eliminar">
+</form>
+
+{% comment %} form de actualizacion {% endcomment %}
+
+{% endblock content %}
