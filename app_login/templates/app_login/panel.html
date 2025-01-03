@@ -3,6 +3,66 @@
 {% block title %}Panel{% endblock title %}
 
 {% block content %}
-<h1>Bienvenido al Panel, {{ user.username }} </h1>
-<a href="{% url 'app_login:user_create' %}">CREAR NUEVO USUARIO</a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .panel-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .panel-container h1, .panel-container a {
+            color: #333;
+            display: block;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .panel-container a {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+        }
+        .panel-container a:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .panel-container a:active {
+            background-color: #0056b3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="panel-container">
+        <h1>Bienvenido al Panel, {{ user.username }}</h1>
+        <a href="{% url 'app_login:user_create' %}">Crear Nuevo Usuario</a>
+        <a href="{% url 'app_login:user_list' %}">Listado de Usuarios</a>
+        <a href="{% url 'app_login:login' %}">Login</a>
+        <a href="{% url 'app_juegos:inicio' %}" class="button">Volver a la Tienda</a>
+    </div>
+</body>
+</html>
 {% endblock content %}

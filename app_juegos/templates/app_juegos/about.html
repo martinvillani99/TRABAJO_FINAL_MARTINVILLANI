@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Mí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Acerca de Mí</h1>
+    </header>
+    <main>
+        <h2>Bienvenidos a mi página de juegos de mesa</h2>
+        <p>Hola, soy Martín Villani, el dueño de este sitio dedicado a los juegos de mesa. Mi pasión por los juegos de mesa comenzó en mi infancia y ha crecido a lo largo de los años.</p>
+        <h2>Sobre mí</h2>
+        <p>Soy de Rosario, Santa Fe, Argentina, y desde muy joven he estado fascinado por las estrategias, la creatividad y las horas de diversión que los juegos de mesa pueden ofrecer. Este sitio es mi manera de compartir esa pasión con el mundo.</p>
+        <h2>Nuestro objetivo</h2>
+        <p>En esta página, encontrarás una variedad de recursos y recomendaciones sobre juegos de mesa, desde clásicos hasta las últimas novedades. Mi objetivo es crear una comunidad donde los entusiastas de los juegos de mesa puedan descubrir nuevos juegos, compartir experiencias y, sobre todo, divertirse.</p>
+        <h2>Únete a nosotros</h2>
+        <p>Te invito a explorar, comentar y participar en nuestra comunidad. ¡Espero que disfrutes de tu tiempo aquí y encuentres inspiración para tus próximas sesiones de juego!</p>
+        <a href="{% url 'app_juegos:inicio' %}" style=" 
+        display: inline-block; 
+        padding: 15px 30px; 
+        font-size: 18px; 
+        color: white; 
+        background-color: #4CAF50; 
+        border: none; 
+        border-radius: 25px; 
+        cursor: pointer; 
+        box-shadow: 0 4px #999; 
+        text-decoration: none; 
+        transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; " onmouseover="this.style.backgroundColor='#45a049'; this.style.boxShadow='0 8px #666';" onmouseout="this.style.backgroundColor='#4CAF50'; this.style.boxShadow='0 4px #999';" onmousedown="this.style.backgroundColor='#45a049'; this.style.boxShadow='0 4px #666'; this.style.transform='translateY(4px)';" onmouseup="this.style.backgroundColor='#45a049'; this.style.boxShadow='0 8px #666'; this.style.transform='translateY(0)';"> Volver al Inicio </a>
+    </main>
+</body>
+</html>

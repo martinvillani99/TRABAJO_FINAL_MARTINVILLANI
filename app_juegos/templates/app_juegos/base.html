@@ -2,27 +2,101 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Tienda de Juegos de Mesa{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Título{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #111;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        ul.options {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul.options li {
+            margin: 10px 0;
+        }
+        ul.options li a {
+            display: block;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+        }
+        ul.options li a:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a la tienda de Juegos de Mesa</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'app_juegos:buscar_juego' %}">Buscar Juego</a></li>
-                <li><a href="{% url 'app_juegos:crear_categoria' %}">Crear Categoría</a></li>
-                <li><a href="{% url 'app_juegos:crear_cliente' %}">Crear Cliente</a></li>
-                <li><a href="{% url 'app_juegos:crear_juego' %}">Crear Juego</a></li>
-                <li><a href="{% url 'app_juegos:crear_pedido' %}">Crear Pedido</a></li>
-                <li><a href="{% url 'app_juegos:listar_juegos' %}">Listar Juegos</a></li>
-                <li><a href="{% url 'app_juegos:lista_categorias' %}">Listar Categorías</a></li>
-                <li><a href="{% url 'app_juegos:lista_pedidos' %}">Listar Pedidos</a></li>
-            </ul>
-        </nav>
+        <h1>{% block header %}Bienvenido{% endblock %}</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'app_juegos:buscar_juego' %}">Buscar Juego</a></li>
+            <li><a href="{% url 'app_juegos:crear_categoria' %}">Crear Categoría</a></li>
+            <li><a href="{% url 'app_juegos:crear_juego' %}">Crear Juego</a></li>
+            <li><a href="{% url 'app_juegos:crear_pedido' %}">Crear Pedido</a></li>
+            <li><a href="{% url 'app_juegos:listar_juegos' %}">Listado Juegos</a></li>
+            <li><a href="{% url 'app_juegos:lista_categorias' %}">Listar Categorías</a></li>
+            <li><a href="{% url 'app_juegos:lista_pedidos' %}">Listar Pedidos</a></li>
+            <li><a href="{% url 'app_juegos:about' %}">Acerca de Mi</a></li>
+            <li><a href="{% url 'app_login:login' %}">Inicia Sesión</a></li>
+        </ul>
+    </nav>
     <main>
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
+    <footer>
+        <p>&copy; 2025 Mi Sitio de Juegos de Mesa</p>
+    </footer>
 </body>
 </html>

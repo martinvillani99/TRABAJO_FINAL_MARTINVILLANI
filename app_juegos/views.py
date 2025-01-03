@@ -104,3 +104,7 @@ def lista_pedidos(request):
 
 def inicio(request):
     return render(request, 'app_juegos/inicio.html')
+
+def about(request): 
+    return render(request, 'app_juegos/about.html')
+

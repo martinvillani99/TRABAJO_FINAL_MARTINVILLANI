@@ -24,4 +24,5 @@
 {% else %}
     <p>No se encontraron juegos que coincidan con la búsqueda.</p>
 {% endif %}
+<a href="{% url 'app_juegos:inicio' %}" style=" display: inline-block; padding: 15px 30px; font-size: 18px; color: white; background-color: #4CAF50; border: none; border-radius: 25px; cursor: pointer; box-shadow: 0 4px #999; text-decoration: none; transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; " onmouseover="this.style.backgroundColor='#45a049'; this.style.boxShadow='0 8px #666';" onmouseout="this.style.backgroundColor='#4CAF50'; this.style.boxShadow='0 4px #999';" onmousedown="this.style.backgroundColor='#45a049'; this.style.boxShadow='0 4px #666'; this.style.transform='translateY(4px)';" onmouseup="this.style.backgroundColor='#45a049'; this.style.boxShadow='0 8px #666'; this.style.transform='translateY(0)';"> Volver al Inicio </a>
 {% endblock %}

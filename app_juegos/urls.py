@@ -11,7 +11,6 @@ urlpatterns = [
     path('', views.inicio, name='inicio'),
     path('buscar_juego/', views.buscar_juego, name='buscar_juego'),
     path('crear_categoria/', views.crear_categoria, name='crear_categoria'),
-    path('crear_cliente/', views.crear_cliente, name='crear_cliente'),
     path('crear_juego/', views.crear_juego, name='crear_juego'),
     path('crear_pedido/', views.crear_pedido, name='crear_pedido'),
     path('listar_juegos/', views.listar_juegos, name='listar_juegos'),
@@ -20,4 +19,5 @@ urlpatterns = [
     path('add_comment/<int:juego_id>/', views.add_comment, name='add_comment'),
     path('lista_categorias/', views.lista_categorias, name='lista_categorias'),
     path('lista_pedidos/', views.lista_pedidos, name='lista_pedidos'),
+    path('about/', views.about, name='about'),
 ]
