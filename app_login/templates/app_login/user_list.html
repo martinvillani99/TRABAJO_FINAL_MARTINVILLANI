@@ -1,0 +1,30 @@
+{% extends 'app_login/base.html' %}
+
+{% block title %} Listado de Usuarios {% endblock title %}
+
+{% block content %}
+
+<h1>LISTA DE Usuarios</h1>
+<table border="1">
+    <thead>
+        <tr>
+        <th>ID</th><th>Username</th><th>Email</th><th>Nombre</th><th>Apellido</th><th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td> {{ user.id }} </td>
+            <td> {{ user.username }} </td>
+            <td> {{ user.email }} </td>
+            <td> {{user.first_name}} </td>
+            <td> {{user.last_name}} </td>
+            <td>
+                <a href="{% url 'app_login:user_edit' pk=user.id %}">EDITAR</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
